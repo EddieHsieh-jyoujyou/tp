@@ -10,6 +10,7 @@ import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_PERSON;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.junit.jupiter.api.Test;
@@ -53,14 +54,14 @@ public class AddressBookParserTest {
     public void parseCommand_delete() throws Exception {
         DeleteCommand command = (DeleteCommand) parser.parseCommand(
                 DeleteCommand.COMMAND_WORD + " " + INDEX_FIRST_PERSON.getOneBased());
-        assertEquals(new DeleteCommand(INDEX_FIRST_PERSON), command);
+        assertEquals(new DeleteCommand(Set.of(INDEX_FIRST_PERSON)), command);
     }
 
     @Test
     public void parseCommand_delete_commandUpperCase() throws Exception {
         DeleteCommand command = (DeleteCommand) parser.parseCommand(
                 DeleteCommand.COMMAND_WORD.toUpperCase() + " " + INDEX_FIRST_PERSON.getOneBased());
-        assertEquals(new DeleteCommand(INDEX_FIRST_PERSON), command);
+        assertEquals(new DeleteCommand(Set.of(INDEX_FIRST_PERSON)), command);
     }
 
     @Test
