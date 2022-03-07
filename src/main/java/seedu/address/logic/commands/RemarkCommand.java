@@ -3,6 +3,8 @@ package seedu.address.logic.commands;
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PERSONS;
 
+import java.util.List;
+
 import seedu.address.commons.core.Messages;
 import seedu.address.commons.core.index.Index;
 import seedu.address.logic.commands.exceptions.CommandException;
@@ -43,7 +45,7 @@ public class RemarkCommand extends Command {
 
     @Override
     public CommandResult execute(Model model) throws CommandException {
-        java.util.List<seedu.address.model.person.Person> lastShownList = model.getFilteredPersonList();
+       List<Person> lastShownList = model.getFilteredPersonList();
 
         if (index.getZeroBased() >= lastShownList.size()) {
             throw new CommandException(Messages.MESSAGE_INVALID_PERSON_DISPLAYED_INDEX);
