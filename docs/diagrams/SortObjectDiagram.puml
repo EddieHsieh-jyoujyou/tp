@@ -1,0 +1,41 @@
+@startuml
+object AddressBookParser
+object SortCommand
+object Person1 {
+
+}
+object Person2 {
+
+}
+object Name1
+object Name2
+
+object Phone1
+object Phone2
+
+object Email1
+object Email2
+
+object Remark1
+object Remark2
+
+object CommandResult
+
+
+AddressBookParser --> SortCommand
+
+SortCommand --> Person1
+SortCommand --> Person2
+
+Person1 -- Name1
+Person1 -- Phone1
+Person1 -- Email1
+Person1 -- Remark1
+Person2 -- Name2
+Person2 -- Phone2
+Person2 -- Email2
+Person2 -- Remark2
+
+SortCommand -up-> CommandResult
+
+@enduml
