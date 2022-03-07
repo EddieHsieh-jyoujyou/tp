@@ -74,7 +74,7 @@ public class AddressBookParser {
             return new RemarkCommandParser().parse(arguments);
 
         case SortCommand.COMMAND_WORD:
-            return new SortCommandParser().parse(arguments);
+            return new SortCommand();
 
         default:
             throw new ParseException(MESSAGE_UNKNOWN_COMMAND);

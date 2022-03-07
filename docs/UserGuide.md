@@ -31,6 +31,8 @@ AddressBook Level 3 (AB3) is a **desktop app for managing contacts, optimized fo
    * **`delete`**`3` : Deletes the 3rd contact shown in the current list.
 
    * **`clear`** : Deletes all contacts.
+   
+   * **`sort`** : Sort contacts by name. 
 
    * **`exit`** : Exits the app.
 
@@ -55,6 +57,8 @@ AddressBook Level 3 (AB3) is a **desktop app for managing contacts, optimized fo
 
 * Parameters can be in any order.<br>
   e.g. if the command specifies `n/NAME p/PHONE_NUMBER`, `p/PHONE_NUMBER n/NAME` is also acceptable.
+
+* Words of command type, like `add` and `delete` also could be `ADD` or `aDd`.
 
 </div>
 
@@ -126,7 +130,7 @@ Examples:
 
 Deletes the specified person from the address book.
 
-Format: `delete INDEX`
+Format: `delete INDEX[,INDEX2,...]`
 
 * Deletes the person at the specified `INDEX`.
 * The index refers to the index number shown in the displayed person list.
@@ -141,6 +145,12 @@ Examples:
 Clears all entries from the address book.
 
 Format: `clear`
+
+### Sorting all persons : `sort`
+
+Sort all persons in the address book by name.
+
+Format: `sort`
 
 ### Exiting the program : `exit`
 
@@ -171,8 +181,9 @@ Action | Format, Examples
 --------|------------------
 **Add** | `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​` <br> e.g., `add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague`
 **Clear** | `clear`
-**Delete** | `delete INDEX`<br> e.g., `delete 3`
+**Delete** | `delete INDEX1, INDEX2<optional>`<br> e.g., `delete 3` or `delete 1,3,5,6`
 **Edit** | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`
 **Find** | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`
 **List** | `list`
 **Help** | `help`
+**Sort** | `sort`
